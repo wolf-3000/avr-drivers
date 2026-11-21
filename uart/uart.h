@@ -13,5 +13,6 @@ void uartSendChar(char c);
 char uartReceiveChar(void);
 void uartSendString(const char *str);
 void uartSendHex(uint8_t value); /* two uppercase nibbles, no prefix */
+void uartSendHex16(uint16_t value);
 
 #endif /* UART_H */

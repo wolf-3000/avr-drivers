@@ -53,3 +53,9 @@ void uartSendHex(uint8_t value)
     uartSendChar(hex[(value >> 4) & 0x0Fu]);
     uartSendChar(hex[value & 0x0Fu]);
 }
+
+void uartSendHex16(uint16_t value)// 1 byte = 2 hex digits 
+{
+    uartSendHex(value >> 8);     // high byte → first 2 digits
+    uartSendHex(value & 0xFF);   // low byte  → last 2 digits
+}
